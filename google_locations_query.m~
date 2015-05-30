@@ -136,16 +136,11 @@ h = errorbar(num_of_steps , delay_google_mat(:,i) , e(:,i), 'r.');
 end
 
 delay_google_mat = reshape(delay_google_vec,length(num_of_steps),[]);
-p=plot(num_of_steps , delay_google_mat(:,1),'-*',...
-    num_of_steps , delay_google_mat(:,2),'-^',...
-    num_of_steps , delay_google_mat(:,3),'->',...
-    num_of_steps , delay_google_mat(:,4),':o',...
-    num_of_steps , delay_google_mat(:,5),':+',...
-    'LineWidth' , 1.5);
+plot(num_of_steps , delay_google_mat(:,1),'-.' , 'LineWidth' , 1.5);
 xlabel('Number of locations per one request');
 ylabel('Delay (sec)');
 set(gca,'FontSize',fontSize);
-legend(p,'Path 1 (10 km)','Path 2 (10 km)','Path 3 (10 km)','Path 4 (50 km)','Path 5 (US Coast-Coast)')
+legend('Path 1 (10 km)','Path 2 (10 km)','Path 3 (10 km)','Path 4 (50 km)','Path 5 (US Coast-Coast)')
 xlim([0, num_of_steps(end)]);
 ylim([0,max(delay_google_vec)]);
 
